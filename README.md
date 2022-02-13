@@ -3,14 +3,14 @@
 const increment = () => {
 return {
 type: 'increment',
-};
+}
 };
 <br />
 const decrement = (nr) => {
 return {
 type: 'decrement',
 payload: nr,
-};
+}
 };
 
 # REDUCER -> describe how state transform to next state (its just a function)
