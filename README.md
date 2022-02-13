@@ -5,7 +5,7 @@ return {
 type: 'increment',
 };
 };
-
+<br />
 const decrement = (nr) => {
 return {
 type: 'decrement',
@@ -19,6 +19,7 @@ const counter = (state = 0, action) => {
 if (action.type === 'increment') {
 return state + 1;
 }
+<br />
 if (action.type === 'decrement') {
 return state - 1;
 }
@@ -37,6 +38,7 @@ store.subscribe(() => console.log(store.getState()));
 # useDispatch -> execute function
 
 import { useSelector, useDispatch } from 'react-redux';
+<br />
 import { increment,decrement, loggedIN, loggedOut } from './actions';
 
 const dispatch = useDispatch();
@@ -52,8 +54,11 @@ store.dispatch(increment()); +1
 # import { combineReducers } from 'redux';
 
 import loggedReducer from './isLogged';
+<br />
 import counterReducer from './counter';
+<br />
 import { combineReducers } from 'redux';
+<br />
 
 // 2 reducers combined in to one reducer with combineReducer function from react library
 
@@ -61,11 +66,14 @@ const allReducers = combineReducers({
 counterReducer,
 loggedReducer,
 });
+<br />
 export default allReducers;
 
 # import { useSelector } from 'react-redux';
 
 use react states
+<br />
 
 const counter = useSelector(state => state.counterReducer);
+<br />
 const loggedIn = useSelector((state) => state.loggedReducer);
