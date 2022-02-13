@@ -1,4 +1,4 @@
-# ACTION -> its just a name and argument description
+# ACTION -> its just a name and argument description send props thrue action
 
 const increment = () => {
 return {

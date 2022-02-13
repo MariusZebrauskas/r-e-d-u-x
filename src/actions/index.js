@@ -19,3 +19,14 @@ export const loggedOut = () => {
     type: 'logged-out',
   };
 };
+export const userAdd = (user) => {
+  return {
+    type: 'addUser',
+    payload: user,
+  };
+};
+export const userRemove = () => {
+  return {
+    type: 'removeUser',
+  };
+};
