@@ -4,7 +4,25 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createStore } from 'redux';
+import allReducers from './reducers';
+import { Provider } from 'react-redux';
 
+// provider wraps all app and share redux states
+let store = createStore(
+  allReducers,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <Provider store={store}>
+      <App />
+    </Provider>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
+
+reportWebVitals();
 
 // # ACTION -> its just a name
 
@@ -41,12 +59,3 @@ import { createStore } from 'redux';
 // store.dispatch(increment());
 // store.dispatch(increment());
 // store.dispatch(decrement());
-
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-  );
-
-  reportWebVitals();
